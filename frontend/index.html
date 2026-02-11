@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Munnar One Day Trip | Perfect Escape</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="hero-header">
+        <a href="admin.html" class="admin-btn-top">
+            <i class="fa-solid fa-user-shield"></i> Admin
+        </a>
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1>Explore Munnar in One Day</h1>
+            <p>Experience the misty hills, tea gardens, and waterfalls.</p>
+        </div>
+    </header>
+
+    <div class="main-container">
+
+        
+        <main class="places-section">
+            <h2 class="section-title"> 7 Must-Visit Spots</h2>
+
+            <div class="place-card">
+                <img src="images/eravakulam.jpg" alt="Eravikulam National Park" class="place-img">
+                <div class="place-info">
+                    <h3>1. Eravikulam National Park</h3>
+                    <p>Home to the endangered Nilgiri Tahr, this park offers breathtaking views of rolling hills and
+                        lush grasslands.</p>
+                </div>
+            </div>
+
+            <div class="place-card">
+                <img src="images/mattupettydam.png" alt="Mattupetty Dam" class="place-img">
+                <div class="place-info">
+                    <h3>2. Mattupetty Dam</h3>
+                    <p>Famous for its storage masonry dam and the beautiful lake, offering boat rides with stunning
+                        views.</p>
+                </div>
+            </div>
+
+            <div class="place-card">
+                <img src="images/kolukumalai.jpg" alt="Kolukkumalai Tea Estate" class="place-img">
+                <div class="place-info">
+                    <h3>3. Kolukkumalai Tea Estate</h3>
+                    <p>The world's highest tea plantation. Witness the majestic sunrise over the ghats.</p>
+                </div>
+            </div>
+
+            <div class="place-card">
+                <img src="images/topstation.jpg" alt="Top Station" class="place-img">
+                <div class="place-info">
+                    <h3>4. Top Station</h3>
+                    <p>The highest point in Munnar, offering panoramic views of the Western Ghats.</p>
+                </div>
+            </div>
+
+            <div class="place-card">
+                <img src="images/attukal.jpg" alt="Attukal Waterfalls" class="place-img">
+                <div class="place-info">
+                    <h3>5. Attukal Waterfalls</h3>
+                    <p>A scenic destination known for its cascading waterfalls and rolling hills.</p>
+                </div>
+            </div>
+
+            <div class="place-card">
+                <img src="images/kundala.avif" alt="Kundala Lake" class="place-img">
+                <div class="place-info">
+                    <h3>6. Kundala Lake</h3>
+                    <p>Historical dam and lake, famous for Neela Kurinji flowers. Enjoy a pedal boat ride here.</p>
+                </div>
+            </div>
+
+            <div class="place-card">
+                <img src="images/blossompark.jpg" alt="Blossom Park" class="place-img">
+                <div class="place-info">
+                    <h3>7. Blossom Park</h3>
+                    <p>A beautiful park with vibrant flowers, underground meditation center, and adventure trails.</p>
+                </div>
+            </div>
+
+        </main>
+
+        
+        <aside class="booking-sidebar">
+            <div class="booking-card">
+                <h3>Plan Your Trip</h3>
+                <p>Fill in the details to book your slot.</p>
+                <form id="bookingForm" onsubmit="submitForm(event)">
+
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" placeholder="Enter your number" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="count">No. of Persons</label>
+                        <input type="number" id="count" min="1" placeholder="e.g. 4" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Date of Visit</label>
+                        <input type="date" id="date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message (Optional)</label>
+                        <textarea id="message" rows="3" placeholder="Any special requests?"></textarea>
+                    </div>
+
+                    <button type="submit" class="cta-button">Confirm Booking</button>
+                    <div id="statusMessage" class="hidden"></div>
+                </form>
+            </div>
+
+            <div class="booking-card" style="margin-top: 20px; border-top: 5px solid var(--accent-color);">
+                <h3>Special Offer</h3>
+                <p>Book for 5+ members and get a 10% discount on your entry tickets!</p>
+            </div>
+        </aside>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Munnar Smart Planner. All rights reserved. | vishalystyles@gmail.com</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Munnar Planner</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body onload="fetchBookings()">
+
+    <header class="hero-header" style="height: 30vh;">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1>Admin Dashboard</h1>
+            <p>Manage User Bookings</p>
+        </div>
+    </header>
+
+    <div class="main-container" style="display: block;">
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h2>Recent Bookings</h2>
+            <a href="index.html" class="cta-button" style="width: auto; display: inline-block;">Back to Home</a>
+        </div>
+
+        <div class="table-container">
+            <table id="bookingsTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Persons</th>
+                        <th>Date</th>
+                        <th>Message</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   
+                </tbody>
+            </table>
+            <p id="noBookingsMsg" style="text-align: center; margin-top: 20px; display: none;">No bookings found.</p>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

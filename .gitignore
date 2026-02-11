@@ -1,0 +1,15 @@
+# Maven build folder
+backend/target/
+
+# Jar files
+*.jar
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Application config
+backend/src/main/resources/application.properties

@@ -1,0 +1,352 @@
+
+:root {
+    --primary-color: #2E7D32;
+   
+    --secondary-color: #81C784;
+  
+    --accent-color: #FF6F00;
+    
+    --bg-color: #F1F8E9;
+    
+    --text-dark: #1B5E20;
+    --text-white: #ffffff;
+    --card-bg: #ffffff;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: #333;
+    line-height: 1.6;
+}
+
+html,
+body {
+    overscroll-behavior-y: none;
+}
+
+
+.hero-header {
+    background: url('images/wallpaper.avif') no-repeat center center/cover;
+    background-attachment: scroll;
+    background-color: #0f2613;
+    height: 60vh;
+   
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    color: var(--text-white);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.admin-btn-top {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+    color: white;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: 30px;
+    backdrop-filter: blur(5px);
+    transition: background 0.3s;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.admin-btn-top:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+
+.main-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    
+    gap: 40px;
+    min-height: 100vh;
+    
+}
+
+
+.section-title {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 2rem;
+    border-bottom: 3px solid var(--secondary-color);
+    display: inline-block;
+}
+
+.place-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    margin-bottom: 25px;
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.place-card:hover {
+    transform: translateY(-5px);
+}
+
+.place-img {
+    width: 250px;
+    height: 180px;
+    object-fit: cover;
+}
+
+.place-info {
+    padding: 20px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.place-info h3 {
+    color: var(--text-dark);
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+.place-info p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+
+.booking-sidebar {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    height: fit-content;
+}
+
+.booking-card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-top: 5px solid var(--primary-color);
+}
+
+.booking-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+}
+
+.booking-card p {
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+}
+
+.cta-button {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #1B5E20;
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--text-dark);
+    color: white;
+    margin-top: 50px;
+}
+
+
+@media (max-width: 768px) {
+    .main-container {
+        grid-template-columns: 1fr;
+        
+    }
+
+    .hero-header {
+        height: 50vh;
+    }
+
+    .place-card {
+        flex-direction: column;
+    }
+
+    .place-img {
+        width: 100%;
+        height: 200px;
+    }
+
+    .place-info {
+        width: 100%;
+    }
+}
+
+
+.success-popup {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        top: -50px;
+        opacity: 0;
+    }
+
+    to {
+        top: 20px;
+        opacity: 1;
+    }
+}
+
+
+.table-container {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background-color: #f9f9f9;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+tr:hover {
+    background-color: #f1f8e9;
+}
+
+.delete-btn {
+    background-color: #ff5252;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+
+.delete-btn:hover {
+    background-color: #d32f2f;
+}
+
+@media (min-width: 1025px) {
+    .hero-header {
+        background-attachment: fixed;
+    }
+}
