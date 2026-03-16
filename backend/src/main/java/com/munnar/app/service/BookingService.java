@@ -1,11 +1,13 @@
 package com.munnar.app.service;
 
 import java.util.List;
-
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.munnar.app.model.Booking;
+import com.munnar.app.model.BookingStatus;
 import com.munnar.app.repository.BookingRepository;
 
 @Service
@@ -22,8 +24,30 @@ public class BookingService {
         return bookingRepository.findAll();
     }
 
+    public Page<Booking> getAllBookings(Pageable pageable) {
+        return bookingRepository.findAll(pageable);
+    }
+
     public void deleteBooking(Long id) {
         bookingRepository.deleteById(id);
+    }
+
+    public Booking updateBooking(Long id, Booking bookingDetails) {
+        return bookingRepository.findById(id).map(booking -> {
+            booking.setName(bookingDetails.getName());
+            booking.setPhoneNumber(bookingDetails.getPhoneNumber());
+            booking.setCount(bookingDetails.getCount());
+            booking.setDate(bookingDetails.getDate());
+            booking.setMessage(bookingDetails.getMessage());
+            return bookingRepository.save(booking);
+        }).orElseThrow(() -> new RuntimeException("Booking not found with id " + id));
+    }
+
+    public Booking updateStatus(Long id, BookingStatus status) {
+        return bookingRepository.findById(id).map(booking -> {
+            booking.setStatus(status);
+            return bookingRepository.save(booking);
+        }).orElseThrow(() -> new RuntimeException("Booking not found with id " + id));
     }
 
     public List<String> getPlaces() {

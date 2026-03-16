@@ -1,6 +1,8 @@
 package com.munnar.app.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -28,6 +30,9 @@ public class Booking {
     private String date;
 
     private String message;
+
+    @Enumerated(EnumType.STRING)
+    private BookingStatus status = BookingStatus.PENDING;
 
     // Constructors
     public Booking() {
@@ -88,5 +93,13 @@ public class Booking {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public BookingStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(BookingStatus status) {
+        this.status = status;
     }
 }

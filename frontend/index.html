@@ -6,16 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Munnar One Day Trip | Perfect Escape</title>
     <link rel="stylesheet" href="style.css">
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
 
-    <header class="hero-header">
-        <a href="admin.html" class="admin-btn-top">
-            <i class="fa-solid fa-user-shield"></i> Admin
-        </a>
+    <!-- Sticky Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-brand">
+            <i class="fa-solid fa-leaf"></i> Munnar Planner
+        </div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#discover">Discover</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="nav-actions">
+            <a href="admin.html" class="admin-btn-nav">
+                <i class="fa-solid fa-user-shield"></i> Admin
+            </a>
+            <div class="hamburger" id="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>    <header class="hero-header" id="home">
         <div class="overlay"></div>
         <div class="hero-content">
             <h1>Explore Munnar in One Day</h1>
@@ -25,73 +41,94 @@
 
     <div class="main-container">
 
-        
+
         <main class="places-section">
             <h2 class="section-title"> 7 Must-Visit Spots</h2>
 
-            <div class="place-card">
+            <div class="place-card reveal-up">
                 <img src="images/eravakulam.jpg" alt="Eravikulam National Park" class="place-img">
                 <div class="place-info">
                     <h3>1. Eravikulam National Park</h3>
                     <p>Home to the endangered Nilgiri Tahr, this park offers breathtaking views of rolling hills and
                         lush grasslands.</p>
+                    <button class="explore-btn" onclick="openModal('eravikulam')">
+                        <i class="fa-solid fa-compass"></i> Explore Details
+                    </button>
                 </div>
             </div>
 
-            <div class="place-card">
+            <div class="place-card reveal-up">
                 <img src="images/mattupettydam.png" alt="Mattupetty Dam" class="place-img">
                 <div class="place-info">
                     <h3>2. Mattupetty Dam</h3>
                     <p>Famous for its storage masonry dam and the beautiful lake, offering boat rides with stunning
                         views.</p>
+                    <button class="explore-btn" onclick="openModal('mattupettydam')">
+                        <i class="fa-solid fa-compass"></i> Explore Details
+                    </button>
                 </div>
             </div>
 
-            <div class="place-card">
+            <div class="place-card reveal-up">
                 <img src="images/kolukumalai.jpg" alt="Kolukkumalai Tea Estate" class="place-img">
                 <div class="place-info">
                     <h3>3. Kolukkumalai Tea Estate</h3>
                     <p>The world's highest tea plantation. Witness the majestic sunrise over the ghats.</p>
+                    <button class="explore-btn" onclick="openModal('kolukkumalai')">
+                        <i class="fa-solid fa-compass"></i> Explore Details
+                    </button>
                 </div>
             </div>
 
-            <div class="place-card">
+            <div class="place-card reveal-up">
                 <img src="images/topstation.jpg" alt="Top Station" class="place-img">
                 <div class="place-info">
                     <h3>4. Top Station</h3>
                     <p>The highest point in Munnar, offering panoramic views of the Western Ghats.</p>
+                    <button class="explore-btn" onclick="openModal('topstation')">
+                        <i class="fa-solid fa-compass"></i> Explore Details
+                    </button>
                 </div>
             </div>
 
-            <div class="place-card">
+            <div class="place-card reveal-up">
                 <img src="images/attukal.jpg" alt="Attukal Waterfalls" class="place-img">
                 <div class="place-info">
                     <h3>5. Attukal Waterfalls</h3>
                     <p>A scenic destination known for its cascading waterfalls and rolling hills.</p>
+                    <button class="explore-btn" onclick="openModal('attukal')">
+                        <i class="fa-solid fa-compass"></i> Explore Details
+                    </button>
                 </div>
             </div>
 
-            <div class="place-card">
+            <div class="place-card reveal-up">
                 <img src="images/kundala.avif" alt="Kundala Lake" class="place-img">
                 <div class="place-info">
                     <h3>6. Kundala Lake</h3>
                     <p>Historical dam and lake, famous for Neela Kurinji flowers. Enjoy a pedal boat ride here.</p>
+                    <button class="explore-btn" onclick="openModal('kundala')">
+                        <i class="fa-solid fa-compass"></i> Explore Details
+                    </button>
                 </div>
             </div>
 
-            <div class="place-card">
+            <div class="place-card reveal-up">
                 <img src="images/blossompark.jpg" alt="Blossom Park" class="place-img">
                 <div class="place-info">
                     <h3>7. Blossom Park</h3>
                     <p>A beautiful park with vibrant flowers, underground meditation center, and adventure trails.</p>
+                    <button class="explore-btn" onclick="openModal('blossom')">
+                        <i class="fa-solid fa-compass"></i> Explore Details
+                    </button>
                 </div>
             </div>
 
         </main>
 
-        
+
         <aside class="booking-sidebar">
-            <div class="booking-card">
+            <div class="booking-card reveal-up">
                 <h3>Plan Your Trip</h3>
                 <p>Fill in the details to book your slot.</p>
                 <form id="bookingForm" onsubmit="submitForm(event)">
@@ -126,7 +163,7 @@
                 </form>
             </div>
 
-            <div class="booking-card" style="margin-top: 20px; border-top: 5px solid var(--accent-color);">
+            <div class="booking-card reveal-up" style="margin-top: 20px; border-top: 5px solid var(--accent-color);">
                 <h3>Special Offer</h3>
                 <p>Book for 5+ members and get a 10% discount on your entry tickets!</p>
             </div>
@@ -134,9 +171,227 @@
 
     </div>
 
+    <section class="extra-discover-section reveal-up" id="discover">
+        <div class="decorative-separator">
+            <span></span>
+            <i class="fa-solid fa-leaf"></i>
+            <span></span>
+        </div>
+        <h2 class="section-title text-center">Discover</h2>
+
+        <div class="discover-grid">
+            <div class="discover-card">
+                <img src="images/elephantride.jpg" alt="Elephant Ride">
+                <div class="discover-overlay"><h3>Elephant Ride</h3></div>
+            </div>
+            <div class="discover-card">
+                <img src="images/Munnar-Glass-bridge.jpg" alt="Munnar Glass Bridge">
+                <div class="discover-overlay"><h3>Glass Bridge</h3></div>
+            </div>
+            <div class="discover-card">
+                <img src="images/wondervalley.jpg" alt="Wonder Valley">
+                <div class="discover-overlay"><h3>Wonder Valley</h3></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="luxury-section reveal-up">
+        <h2 class="section-title text-center">Kerala Luxury</h2>
+        <div class="luxury-content">
+            <p>Munnar, widely recognized as the Kashmir of South India, is the epitome of a luxury holiday in God's Own Country. Nestled within the lush Western Ghats, it features sprawling emerald tea plantations, picturesque valleys, and enchanting waterfalls. Our carefully curated itineraries ensure you experience the absolute best of Munnar's pristine beauty, offering a calm and soothing retreat away from the noise of city life.</p>
+            <p>We believe your comfort is paramount. Enjoy exclusive stays at premium resorts that overlook misty mountains, guided private tours to unseen viewpoints, and luxury transport to keep your journey smooth. Treat yourself to world-class Ayurvedic spa sessions, taste the finest local tea right at the estates, and relish gourmet dining experiences as you unwind in the lap of luxury.</p>
+        </div>
+    </section>
+
+    <section class="video-section reveal-up">
+        <div class="decorative-separator">
+            <span></span>
+            <i class="fa-solid fa-campground"></i>
+            <span></span>
+        </div>
+        <h2 class="section-title text-center">Camping Shot</h2>
+        <div class="video-container">
+            <video controls autoplay muted loop playsinline>
+                <source src="video/Munnar Trip Planners Your Ultimate Munnar Travel Guide.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+
+    <section class="experience-section reveal-up" id="about">
+        <h2 class="section-title text-center">With our experience we will serve u</h2>
+        <div class="experience-stats">
+            <div class="stat-item">
+                <h3><strong>50+ Experience</strong></h3>
+            </div>
+            <div class="stat-item">
+                <h3><strong>200+ Completed Tours</strong></h3>
+            </div>
+            <div class="stat-item">
+                <h3><strong>15+ Years Experience</strong></h3>
+            </div>
+        </div>
+
+        <div class="text-center" style="margin-top: 50px;">
+            <button class="cta-button" id="showDirectionsBtn" style="width: auto; padding: 16px 40px; font-size: 1.2rem; border-radius: 30px;">
+                <i class="fa-solid fa-map-location-dot"></i> View Our Direction Packages
+            </button>
+        </div>
+    </section>
+
+    <!-- Hidden Directions Section -->
+    <section class="directions-section hidden-section" id="directionsSection">
+        <div class="decorative-separator">
+            <span></span>
+            <i class="fa-solid fa-route"></i>
+            <span></span>
+        </div>
+        <h2 class="section-title text-center">Let's Check The Direction</h2>
+
+        <div class="direction-container">
+            <!-- Top Station -->
+            <div class="direction-card reveal-up">
+                <div class="direction-img-container">
+                    <img src="images/topstation.jpg" alt="Top Station">
+                </div>
+                <div class="direction-content">
+                    <h3>Top Station Direction</h3>
+                    <p>When traveling from Munnar to Top Station, there are several tourist spots along the way. Popular attractions include <strong>Mattupetty Dam</strong>, offering scenic boating and farm visits. <strong>Echo Point</strong> is celebrated for its natural echo phenomenon and mist-clad mountain views. Enjoy pedal boating at <strong>Kundala Lake</strong>, surrounded by cherry blossoms and lush greenery. The ultimate destination is <strong>Top Station</strong> itself, renowned for its panoramic views over the Western Ghats and the blooming of Neelakurinji flowers.</p>
+                </div>
+            </div>
+
+            <!-- Thekkady -->
+            <div class="direction-card reveal-up reverse">
+                <div class="direction-img-container">
+                    <img src="images/thekkady.jpg" alt="Thekkady">
+                </div>
+                <div class="direction-content">
+                    <h3>Thekkady Direction</h3>
+                    <p>A journey towards Thekkady promises encounters with pristine nature. En route, the <strong>Spice Gardens</strong> offer an educational aromatic experience. Experience the thrill of <strong>Elephant Parks</strong> and the sheer natural beauty of <strong>Chengulam Dam</strong>. Further along, you'll encounter breathtaking vistas at <strong>2nd Mile View Point</strong> and <strong>Pothamedu View Point</strong>. For adventurous souls, adrenaline-pumping ziplines and the stunning <strong>Attukad Waterfalls</strong> make the trip unforgettable.</p>
+                </div>
+            </div>
+
+            <!-- Echo Point -->
+            <div class="direction-card reveal-up reverse">
+                <div class="direction-img-container">
+                    <img src="images/Echopoint.jpg" alt="Echo Point">
+                </div>
+                <div class="direction-content">
+                    <h3>Echo Point Direction</h3>
+                    <p>On your way to <strong>Echo Point</strong>, you'll be treated to rolling tea estates and picturesque reservoirs. It sits gracefully at an altitude of 600 ft, surrounded by mist, green landscapes, and a tranquil lake. Shout as loud as you can and listen to your voice bouncing back from the hills! The calm boating experiences available here form the perfect relaxing getaway.</p>
+                </div>
+            </div>
+
+            <!-- Chinnar -->
+            <div class="direction-card reveal-up">
+                <div class="direction-img-container">
+                    <img src="images/chinnar.jpeg" alt="Chinnar">
+                </div>
+                <div class="direction-content">
+                    <h3>Chinnar Direction</h3>
+                    <p>The road to Chinnar is incredibly majestic, leading through the famous <strong>Marayoor Sandalwood Forests</strong> where you can explore ancient rock paintings. Enjoy the captivating beauty of <strong>Thoovanam Waterfalls</strong> hidden deep in the woods. Ultimately, you'll arrive at the <strong>Chinnar Wildlife Sanctuary</strong>, home to elephants, deer, and exotic bird species. Nearby, you can also explore the fruit-bearing haven of <strong>Kanthalloor</strong>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section reveal-up">
+        <div class="decorative-separator">
+            <span></span>
+            <i class="fa-solid fa-circle-question"></i>
+            <span></span>
+        </div>
+        <h2 class="section-title text-center">Frequently Asked Questions</h2>
+        
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>After we reach Munnar, what is the next proceeding?</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Once you reach Munnar, our representative will greet you and assist with your check-in process. We will then proceed with the sightseeing itinerary as planned, covering the major attractions based on your package.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What is the best time to visit Munnar?</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>The best time to visit Munnar is from September to March when the weather is pleasant and ideal for trekking and sightseeing. The monsoon season (June to August) is also beautiful, showcasing lush greenery and misty landscapes.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Does your tour agency provide a guide?</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, we provide experienced local guides who are fluent in multiple languages and have deep knowledge about Munnar's history, culture, and nature spots.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What would be the rate for tour packages?</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Our tour package rates are highly competitive and vary based on the duration, type of accommodation, and group size. Please contact us via WhatsApp or the booking form for a customized quote.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can we get a lady driver for our women only tour packages?</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely! We prioritize the comfort and safety of our travelers. We can arrange professional lady drivers and guides for all-women tour groups upon prior request.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pre-footer-section reveal-up" id="contact">
+        <div class="pre-footer-container">
+            <div class="footer-contact-column">
+                <h3 class="footer-column-title">Contact</h3>
+                <div class="whatsapp-list">
+                    <a href="https://wa.me/919495812486" class="whatsapp-item" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> 9495812486
+                    </a>
+                    <a href="https://wa.me/919446609455" class="whatsapp-item" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> 9446609455
+                    </a>
+                    <a href="https://wa.me/916282438564" class="whatsapp-item" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> 6282438564
+                    </a>
+                </div>
+            </div>
+            <div class="footer-travel-column">
+                <h3 class="footer-column-title">Travel</h3>
+                <p>Travel the destination you choose. We offer you the best experience.</p>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <p>&copy; 2026 Munnar Smart Planner. All rights reserved. | vishalystyles@gmail.com</p>
     </footer>
+
+    <!-- Explore Modal Structure -->
+    <div id="exploreModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div id="modalBody">
+                <!-- Content injected via JS -->
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
